@@ -167,17 +167,6 @@ export const MainPage: React.FC<MainPageProps> = ({ onNavigate }) => {
         {/* Navigation buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-6 animate-fadeInScale" style={{ animationDelay: '0.6s' }}>
           <button
-            onClick={() => onNavigate('results')}
-            className="group bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
-          >
-            <div className="flex items-center justify-center gap-3">
-              <Trophy className="w-6 h-6 group-hover:animate-bounce" />
-              <span>عرض النتائج</span>
-              <ArrowLeft className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </div>
-          </button>
-          
-          <button
             onClick={() => onNavigate('schedule')}
             className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
           >
@@ -187,77 +176,110 @@ export const MainPage: React.FC<MainPageProps> = ({ onNavigate }) => {
               <ArrowLeft className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </div>
           </button>
+          
+          <button
+            onClick={() => onNavigate('results')}
+            className="group bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+          >
+            <div className="flex items-center justify-center gap-3">
+              <Trophy className="w-6 h-6 group-hover:animate-bounce" />
+              <span>عرض النتائج</span>
+              <ArrowLeft className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </button>
         </div>
 
         {/* Footer message */}
         <div className="text-center mt-16 animate-fadeInScale" style={{ animationDelay: '0.9s' }}>
           {/* Contact section */}
-          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 mb-8 border border-white/20 shadow-2xl max-w-2xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 mb-8 border border-white/20 shadow-2xl max-w-4xl mx-auto hover:bg-white/15 transition-all duration-300">
             <div className="flex justify-center items-center gap-3 mb-6">
-              <div className="bg-gradient-to-r from-yellow-300 to-orange-300 p-3 rounded-full animate-pulse-soft">
+              <div className="bg-gradient-to-r from-yellow-300 to-orange-300 p-4 rounded-full animate-pulse-soft shadow-lg">
                 <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white glowing-text">
+              <h3 className="text-3xl md:text-4xl font-bold text-white glowing-text-main">
                 تواصل معنا
               </h3>
-              <div className="bg-gradient-to-r from-blue-300 to-purple-300 p-3 rounded-full animate-pulse-soft" style={{ animationDelay: '0.5s' }}>
+              <div className="bg-gradient-to-r from-blue-300 to-purple-300 p-4 rounded-full animate-pulse-soft shadow-lg" style={{ animationDelay: '0.5s' }}>
                 <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
               </div>
             </div>
             
-            <div className="space-y-4 text-center">
-              <div className="flex items-center justify-center gap-3 bg-white/5 rounded-2xl p-4 hover-glow">
-                <svg className="w-6 h-6 text-yellow-300" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-                <a href="mailto:tarekaboya2019@gmail.com" className="text-blue-100 hover:text-white transition-colors font-semibold">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Email section */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-full shadow-lg">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                  </div>
+                  <h4 className="text-xl font-bold text-blue-200">البريد الإلكتروني</h4>
+                </div>
+                <a href="mailto:tarekaboya2019@gmail.com" className="text-white hover:text-yellow-300 transition-colors font-semibold text-lg block text-center">
                   tarekaboya2019@gmail.com
                 </a>
               </div>
               
-              <div className="flex items-center justify-center gap-3 bg-white/5 rounded-2xl p-4 hover-glow">
-                <svg className="w-6 h-6 text-green-300" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                </svg>
-                <a href="tel:+01559181558" className="text-blue-100 hover:text-white transition-colors font-semibold">
-                  +20 155 918 1558
-                </a>
-              </div>
-              
-              <div className="flex items-center justify-center gap-3 bg-white/5 rounded-2xl p-4 hover-glow">
-                <svg className="w-6 h-6 text-green-300" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                </svg>
-                <a href="tel:+201205362040" className="text-blue-100 hover:text-white transition-colors font-semibold">
-                  +20 122 053 6204
-                </a>
-              </div>
-              
-              <div className="flex items-center justify-center gap-3 bg-white/5 rounded-2xl p-4 hover-glow">
-                <svg className="w-6 h-6 text-green-300" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                </svg>
-                <a href="tel:+201276099675" className="text-blue-100 hover:text-white transition-colors font-semibold">
-                  +20 127 609 9675
-                </a>
+              {/* Phone section */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="bg-gradient-to-r from-green-500 to-emerald-500 p-3 rounded-full shadow-lg">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                  </div>
+                  <h4 className="text-xl font-bold text-green-200">أرقام الهاتف</h4>
+                </div>
+                <div className="space-y-2 text-center">
+                  <a href="tel:+01559181558" className="text-white hover:text-yellow-300 transition-colors font-semibold block">
+                    +20 155 918 1558
+                  </a>
+                  <a href="tel:+201205362040" className="text-white hover:text-yellow-300 transition-colors font-semibold block">
+                    +20 120 536 2040
+                  </a>
+                  <a href="tel:+201276099675" className="text-white hover:text-yellow-300 transition-colors font-semibold block">
+                    +20 127 609 9675
+                  </a>
+                </div>
               </div>
             </div>
             
-            <div className="mt-6 pt-6 border-t border-white/20">
+            {/* Location section */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="bg-gradient-to-r from-red-500 to-pink-500 p-3 rounded-full shadow-lg">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold text-red-200">الموقع</h4>
+              </div>
+              <a 
+                href="https://maps.app.goo.gl/BA3xbuvekc8kgKaMA" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-yellow-300 transition-colors font-semibold text-lg block text-center"
+              >
+                الجامع الشرقي، دمليج، منوف، المنوفية
+              </a>
+            </div>
+            
+            <div className="mt-8 pt-6 border-t border-white/20">
               <div className="flex items-center justify-center gap-2 text-blue-200">
                 <svg className="w-5 h-5 text-pink-300 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                 </svg>
-                <span className="text-sm">Created by</span>
+                <span className="text-sm font-medium">Created by</span>
                 <a 
                   href="https://www.facebook.com/palestine7102023y/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="font-bold text-yellow-300 hover:text-white transition-colors hover:underline glowing-text"
+                  className="font-bold text-yellow-300 hover:text-white transition-colors hover:underline glowing-text text-lg"
                 >
                   Ahmed Tareq
                 </a>

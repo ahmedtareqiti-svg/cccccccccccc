@@ -50,12 +50,31 @@ export const StatsSection: React.FC<StatsSectionProps> = ({ stats }) => {
 
         <div className="mt-12 bg-white p-8 rounded-2xl shadow-lg">
           <h3 className="text-2xl font-bold text-center text-gray-800 mb-6">الفئات المشاركة</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {stats.categories.map((category, index) => (
-              <div key={index} className="bg-gradient-to-r from-blue-100 to-purple-100 p-4 rounded-xl text-center">
-                <p className="font-semibold text-gray-800">{category}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-2 gap-4 max-w-4xl mx-auto">
+            <div className="bg-gradient-to-r from-blue-100 to-purple-100 p-4 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <p className="font-semibold text-gray-800">ثلاثة أجزاء</p>
+            </div>
+            <div className="bg-gradient-to-r from-green-100 to-blue-100 p-4 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <p className="font-semibold text-gray-800">خمسة أجزاء</p>
+            </div>
+            <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-4 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <p className="font-semibold text-gray-800">ثمانية أجزاء</p>
+            </div>
+            <div className="bg-gradient-to-r from-orange-100 to-yellow-100 p-4 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <p className="font-semibold text-gray-800">عشرة أجزاء</p>
+            </div>
+            <div className="bg-gradient-to-r from-pink-100 to-red-100 p-4 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <p className="font-semibold text-gray-800">خمسة عشر جزءا</p>
+            </div>
+            <div className="bg-gradient-to-r from-indigo-100 to-purple-100 p-4 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <p className="font-semibold text-gray-800">عشرون جزءا</p>
+            </div>
+            <div className="bg-gradient-to-r from-yellow-100 to-orange-100 p-4 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <p className="font-semibold text-gray-800">خمسة وعشرون جزءا</p>
+            </div>
+            <div className="bg-gradient-to-r from-red-100 to-pink-100 p-4 rounded-xl text-center hover:shadow-lg transition-shadow">
+              <p className="font-semibold text-gray-800">ثلاثون جزءا</p>
+            </div>
           </div>
         </div>
       </div>

@@ -38,16 +38,16 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
       hoverGradient: 'hover:from-green-600 hover:to-emerald-700'
     },
     {
-      id: 'results',
-      label: 'النتائج',
-      icon: Trophy,
+      id: 'schedule',
+      label: 'جدول الاختبارات',
+      icon: Calendar,
       gradient: 'from-blue-500 to-purple-600',
       hoverGradient: 'hover:from-blue-600 hover:to-purple-700'
     },
     {
-      id: 'schedule',
-      label: 'جدول الاختبارات',
-      icon: Calendar,
+      id: 'results',
+      label: 'النتائج',
+      icon: Trophy,
       gradient: 'from-purple-500 to-pink-600',
       hoverGradient: 'hover:from-purple-600 hover:to-pink-700'
     }
